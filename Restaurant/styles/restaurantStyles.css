@@ -1,0 +1,40 @@
+/*
+Creator: Noah Wieser
+Date created: 11/24/2019
+Date last modified:
+*/
+
+header, footer {
+    height: 100px;
+    text-align: center;
+    padding: 30px 10px 20px 10px;
+    font-family: "Georgia", Times, serif;
+    background-color: #4F4F4F;
+    color: #f2eded;
+}
+
+
+nav a {
+
+    text-align: center;
+    margin: 20px;
+    width: 100px;
+    float: left;
+}
+nav a:visited {
+  color: #8C60B7;
+}
+nav a:hover {
+  font-weight: bold;
+}
+
+nav a:active {
+  text-decoration: none;
+}
+
+.clear-float {
+    clear:both;
+}
+.right-content {
+    float:left;
+}

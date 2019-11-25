@@ -2,12 +2,29 @@
 <!--
 Name: Noah Wieser
 Date Created: 11/21/2019
-Most recent revision:
+Most recent revision: 11/24/2019
 -->
 <html lang="en">
 
   <head>
     <title>Home Page</title>
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+
+    <style>
+
+      #mainContent{
+        background-color: #B58F62;
+        font-size: 20px;
+      }
+      #description{
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+
+    </style>
+
   </head>
 
   <body>
@@ -18,33 +35,32 @@ Most recent revision:
 
 
     <nav>
-      <hr />
       <!-- Links to the other pages in our website -->
       <p><a href="index.html">Home</a></p>
       <p><a href="menu.html">Menu</a></p>
       <p><a href="contact.html">Contact Us</a></p>
-      <hr />
+      <div class="clear-float">
+
     </nav>
 
 
     <section>
-      <article id="description">
-        <img src="images/hamburger.jpg" alt="Image of hamburger" width="400" height="150"/>
-        <p>Restaurant Description</p>
-        <p>Welcome to Hungry Henry's, the all-American dine-in, take-out and caterer! We have all of your favorites, including classics
-          that are sure to please everyone. Established in 1995, we have continued to bring quality, flavor and value
-          to the midwest for nearly 25 years. Our promise to use top-notch ingredients, timeless recipes and fair pricing is
-          one we're determined to uphold for generations to come.</p>
+      <article id="mainContent">
+        <article id="description">
+          <div style="text-align:center"> <img src="images/burger.png" alt="Image of hamburger" width="400" height="150"/> </div>
+          <p>Welcome to Hungry Henry's, the all-American dine-in, take-out and caterer! We have all of your favorites, including classics
+            that are sure to please everyone. Established in 1995, we have continued to bring quality, flavor and value
+            to the midwest for nearly 25 years. Our promise to use top-notch ingredients, timeless recipes and fair pricing is
+            one we're determined to uphold for generations to come.</p>
+        </article>
       </article>
 
     </section>
 
 
     <footer>
-      <hr />
       <p>1011 Washington Ave, Minneapolis, Minnesota, 55401</p>
       <p>(612)101-1337</p>
-      <hr />
     </footer>
 
   </body>

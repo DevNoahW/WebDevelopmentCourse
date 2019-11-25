@@ -2,12 +2,19 @@
 <!--
 Name: Noah Wieser
 Date Created: 11/21/2019
-Most recent revision: 11/22/2019
+Most recent revision: 11/24/2019
 -->
 <html lang="en">
 
   <head>
     <title>Contact Us</title>
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      section{
+        background-color: #E2E2E2;
+      }
+    </style>
   </head>
 
   <body>
@@ -18,49 +25,51 @@ Most recent revision: 11/22/2019
 
 
     <nav>
-      <hr />
       <!-- Links to the other pages in our website -->
       <p><a href="index.html">Home</a></p>
       <p><a href="menu.html">Menu</a></p>
       <p><a href="contact.html">Contact Us</a></p>
-      <hr />
+      <div class="clear-float"></div>
     </nav>
 
     <section>
 
       <form action="submit.html" method="POST">
 
-        <label for="name">Name: </label>
+        <label for="name"><strong>Name: </strong></label>
         <input type="text" id="name" name="name">
         <br />
 
-        <label for="email">Email: </label>
+
+        <label for="email"><strong>Email: </strong></label>
         <input type="text" id="email" name="email">
         <br />
 
-        <label for="phone">Phone Number: </label>
+        <label for="phone"><strong>Phone: </strong></label>
         <input type="text" id="phone" name="phone">
         <br />
+        <label for="reason"><strong>Reason for Inquiry: </strong></label>
 
-        <label for="reason">Reason for Inquiry: </label>
         <select id="reason" name="reason">
           <option value="default" selectd>Catering</option>
           <option value="privateParty" selectd>Private Party</option>
           <option value="feedback" selectd>Feedback</option>
           <option value="other" selectd>Other</option>
-          <br />
         </select>
+        <br />
 
         <label for="info">Additional Information</label>
-        <textarea id="info" name="info"></textarea><br />
+        <textarea id="info" name="info"></textarea>
+        <br />
 
         <fieldset>
-          <legend>Have you been to the restaurant?</legend><br />
+          <legend>Have you been to the restaurant?</legend>
           <input type="radio" id="choice1" name="questionnaire" value="no">
           <label for="choice1">No</label>
           <input type="radio" id="choice2" name="questionnaire" value="yes">
-          <label for="choice2">Yes</label><br />
+          <label for="choice2">Yes</label>
         </fieldset>
+        <br />
 
         <fieldset>
           <legend>Best days to contact you: </legend>
@@ -75,11 +84,12 @@ Most recent revision: 11/22/2019
           <input type="checkbox" id="friday" name="day" value="friday">
           <label for="frontEnd">F</label><br />
         </fieldset>
-
+        <br />
 
 
 
         <input type="submit" name="submit" value="Send Request">
+        <br />
 
       </form>
 
@@ -87,10 +97,8 @@ Most recent revision: 11/22/2019
 
 
     <footer>
-      <hr />
       <p>1011 Washington Ave, Minneapolis, Minnesota, 55401</p>
       <p>(612)101-1337</p>
-      <hr />
     </footer>
 
   </body>
