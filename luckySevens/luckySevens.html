@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Name: Noah Wieser
+Date Created: 11/25/2019
+Most recent revision: 11/27/2019
+-->
+<html>
+<head>
+    <script type="text/JavaScript" src="luckySevens.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Lucky Sevens</h1>
+
+    <form name="game" onsubmit="return validateItems();"
+          onreset="resetForm();" class="form-inline">
+            <div class="form-group">
+                <label for="startingBet">Starting Bet</label>
+                <input type="number" class="form-control" id="startingBet">
+            </div>
+            <br />
+            <button type="submit" id="playButton" class="btn btn-default">Play</button>
+    </form>
+
+    <hr />
+
+    <!-- Result display table ------------------------------------------->
+    <table id="results" class="table table-striped" style="display:none;">
+      <caption>Results</caption>
+        <tbody>
+            <tr>
+                <td>Starting Bet</td>
+                <td><span id="intialBet"></span></td>
+            </tr>
+            <tr>
+                <td>Total Rolls Before Going Broke</td>
+                <td><span id="totalRolls"></span></td>
+            </tr>
+            <tr>
+                <td>Highest Amount Won</td>
+                <td><span id="highestWon"></span></td>
+            </tr>
+            <tr>
+                <td>Roll Count At Highest Amount Won</td>
+                <td><span id="rollCountAtHighest"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

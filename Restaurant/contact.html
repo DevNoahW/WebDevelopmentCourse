@@ -2,104 +2,170 @@
 <!--
 Name: Noah Wieser
 Date Created: 11/21/2019
-Most recent revision: 11/24/2019
+Most recent revision: 11/27/2019
 -->
 <html lang="en">
 
   <head>
-    <title>Contact Us</title>
-    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <title>Contact Us</title>
+
+    <script type="text/JavaScript" src="scripts/contact.js"></script>
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <!-- Internal style sheet for the contact page-->
     <style>
       section{
         background-color: #E2E2E2;
       }
+      .contactForm{
+
+        padding-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: left;
+      }
+      label{
+        font-size: 16px;
+        font-weight: normal;
+
+      }
+      #visitLabel, #daysLabel{
+        margin-right: 30px;
+      }
+      #choice1, #choice2{
+        background-color: white;
+      }
+
     </style>
   </head>
 
+
+
   <body>
 
-    <header>
-      <h1>Hungry Henry's</h1>
-    </header>
+    <!--Alerts the user if they have javascript disabled-->
+    <noscript>
+      <style type="text/css">
+          .pagecontainer {display:none;}
+      </style>
+      <div class="alert">
+      <h1>This site is best viewed with JavaScript enabled.</h1>
+      </div>
+    </noscript>
+
+    
+    <div class="container-fluid">
+
+      <header class="jumbotron" id="newLocation">
+        <h1>Hungry Henry's</h1>
+        <h2 class="font-italic">We're opening a new location!</h2>
+      </header>
 
 
-    <nav>
-      <!-- Links to the other pages in our website -->
-      <p><a href="index.html">Home</a></p>
-      <p><a href="menu.html">Menu</a></p>
-      <p><a href="contact.html">Contact Us</a></p>
-      <div class="clear-float"></div>
-    </nav>
+      <nav>
+        <!-- Links to the other pages in our website -->
+        <div class="row">
+        <p><a class="btn badge-pill" href="index.html"><span class="glyphicon glyphicon-home"></span></a></p>
+        <p><a class="btn badge-pill" href="menu.html">Menu</a></p>
+        <p><a class="btn badge-pill" href="contact.html">Contact Us</a></p>
+        </div>
+      </nav>
 
-    <section>
+      <section>
 
-      <form action="submit.html" method="POST">
-
-        <label for="name"><strong>Name: </strong></label>
-        <input type="text" id="name" name="name">
-        <br />
-
-
-        <label for="email"><strong>Email: </strong></label>
-        <input type="text" id="email" name="email">
-        <br />
-
-        <label for="phone"><strong>Phone: </strong></label>
-        <input type="text" id="phone" name="phone">
-        <br />
-        <label for="reason"><strong>Reason for Inquiry: </strong></label>
-
-        <select id="reason" name="reason">
-          <option value="default" selectd>Catering</option>
-          <option value="privateParty" selectd>Private Party</option>
-          <option value="feedback" selectd>Feedback</option>
-          <option value="other" selectd>Other</option>
-        </select>
-        <br />
-
-        <label for="info">Additional Information</label>
-        <textarea id="info" name="info"></textarea>
-        <br />
-
-        <fieldset>
-          <legend>Have you been to the restaurant?</legend>
-          <input type="radio" id="choice1" name="questionnaire" value="no">
-          <label for="choice1">No</label>
-          <input type="radio" id="choice2" name="questionnaire" value="yes">
-          <label for="choice2">Yes</label>
-        </fieldset>
-        <br />
-
-        <fieldset>
-          <legend>Best days to contact you: </legend>
-          <input type="checkbox" id="monday" name="day" value="monday">
-          <label for="frontEnd">M</label>
-          <input type="checkbox" id="tuesday" name="day" value="tuesday">
-          <label for="frontEnd">T</label>
-          <input type="checkbox" id="wednesday" name="day" value="wednesday">
-          <label for="database">W</label>
-          <input type="checkbox" id="thursday" name="day" value="thursday">
-          <label for="frontEnd">TH</label>
-          <input type="checkbox" id="friday" name="day" value="friday">
-          <label for="frontEnd">F</label><br />
-        </fieldset>
-        <br />
+        <!--From to collect user input that is later processed be JavaScript-->
+        <form name="contact" onsubmit="return validateItems();"
+              onreset="resetForm();">
+          <div class="row">
+            <div class="contactForm">
 
 
-
-        <input type="submit" name="submit" value="Send Request">
-        <br />
-
-      </form>
-
-    </section>
+              <div class="form-group">
+                <label for="name"><strong>Name: </strong></label>
+                <input type="name" class="form-control" id="name" placeholder="Enter Name">
+              </div>
 
 
-    <footer>
-      <p>1011 Washington Ave, Minneapolis, Minnesota, 55401</p>
-      <p>(612)101-1337</p>
-    </footer>
+              <div class="form-group">
+                <label for="email"><strong>Email: </strong></label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email">
+              </div>
 
+
+              <div class="form-group">
+                <label for="phone"><strong>Phone: </strong></label>
+                <input type="phone" class="form-control" id="phone" placeholder="Enter Phone Number">
+              </div>
+
+              <div class="form-group">
+                  <label for="reason"><strong>Reason for Inquiry: </strong></label>
+                  <select id="reason" name="reason" class="form-control">
+                    <option value="default" selectd>Catering</option>
+                    <option value="privateParty" selectd>Private Party</option>
+                    <option value="feedback" selectd>Feedback</option>
+                    <option value="other" selectd>Other</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="info">Additional Information: </label>
+                  <textarea id="info" name="info" class="form-control"></textarea>
+                  <br />
+              </div>
+
+              <div class="form-check form-check-inline">
+                          <label id="visitLabel">Have you been to the restaurant?</label>
+                          <input class="form-check-input" type="radio" id="choice1" name="questionnaire" value="no" checked>
+                          <label class="form-check-label" for="choice1">no</label>
+                          <input class="form-check-input" type="radio" id="choice2" name="questionnaire" value="yes">
+                          <label class="form-check-label" for="choice2">yes</label>
+              </div>
+              <br />
+              <div class="form-check form-check-inline">
+                    <label id="daysLabel">Best days to contact you: </label>
+                    <input class="form-check-input" type="checkbox" id="monday" name="day" value="monday">
+                    <label class="form-check-label" for="frontEnd">M</label>
+                    <input class="form-check-input" type="checkbox" id="tuesday" name="day" value="tuesday">
+                    <label class="form-check-label" for="frontEnd">T</label>
+                    <input class="form-check-input" type="checkbox" id="wednesday" name="day" value="wednesday">
+                    <label class="form-check-label" for="database">W</label>
+                    <input class="form-check-input" type="checkbox" id="thursday" name="day" value="thursday">
+                    <label class="form-check-label" for="frontEnd">TH</label>
+                    <input class="form-check-input" type="checkbox" id="friday" name="day" value="friday">
+                    <label class="form-check-label" for="frontEnd">F</label>
+              </div>
+
+              <br />
+
+                <button type="submit" id="submitButton" class="btn btn-default">Send Request</button>
+
+            </div>
+          </div>
+        </form>
+
+      </section>
+
+
+      <footer>
+        <p>1011 Washington Ave, Minneapolis, Minnesota, 55401</p>
+        <p>(612)101-1337</p>
+      </footer>
+    </div>
+
+    <!-- CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
   </body>
 </html>
